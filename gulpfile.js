@@ -9,4 +9,8 @@ gulp.task("sass", function () {
         .pipe(gulp.dest("."))
 });
 
-gulp.task('default', gulp.series("sass"));
+gulp.task("watch", function () {
+    gulp.watch("css/app.scss", gulp.series("sass"))
+});
+
+gulp.task('default', gulp.series("sass", "watch"));
