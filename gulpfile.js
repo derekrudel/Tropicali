@@ -20,13 +20,32 @@ gulp.task("sass", function () {
         .pipe(browserSync.stream())
 })
 
+gulp.task("html", function () {
+    return gulp.src("src/index.html")
+        .pipe(gulp.dest("dist"))
+})
+
+gulp.task("fonts", function () {
+    return gulp.src("src/fonts/*")
+        .pipe(gulp.dest("dist/fonts"))
+})
+
+gulp.task("images", function () {
+    return gulp.src("src/img/*")
+        .pipe(gulp.dest("dist/img"))
+})
+
+
 gulp.task("watch", function () {
     browserSync.init({
         server: {
             baseDir: "dist"
         }
     })
+    gulp.watch("src/index.html", gulp.series("html")).on("change", browserSync.reload)
     gulp.watch("src/css/app.scss", gulp.series("sass"))
+    gulp.watch("src/fonts/*", gulp.series("fonts"))
+    gulp.watch("src/img/*", gulp.series("images"))
 })
 
-gulp.task('default', gulp.series("sass", "watch"))
+gulp.task('default', gulp.series("html", "sass", "fonts", "images", "watch"))
