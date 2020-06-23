@@ -1,6 +1,10 @@
-function defaultTask(cb) {
-    // place code for your default task here
-    cb();
-}
+var gulp = require('gulp');
+var sass = require('gulp-sass');
 
-exports.default = defaultTask
+sass.compiler = require('node-sass');
+
+gulp.task("default", function () {
+    return gulp.src("css/app.scss")
+        .pipe(sass())
+        .pipe(gulp.dest("app.css"))
+})
