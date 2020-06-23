@@ -1,0 +1,15 @@
+{
+  "name": "Tropicali",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:derekrudel/Tropicali.git",
+  "author": "Derek Rudel <derek@rudelcreative.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fsevents": "^2.1.3",
+    "node": "^14.4.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
