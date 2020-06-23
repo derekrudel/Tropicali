@@ -61,6 +61,10 @@ section.grid p {
     margin: 20px 0;
 }
 
+section.grid img {
+    width: 100%;
+}
+
 section.hero {
     padding: var(--hero-spacing) var(--main-spacing);
     color: var(--text-on-dark);
